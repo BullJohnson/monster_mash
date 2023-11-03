@@ -1,6 +1,6 @@
 "use strict";
 
-// William S. Johnson, Jr | 11-05-23 | DPR214 - Cycling Banners
+// William S. Johnson, Jr | 11-05-23 | DPR214 - Effects and Animaton (Monster Mash)
 
     // Audio Constructor for thunder sounds. Won't be heard until user interacts, though.
 let thunder = new Audio("images/thunder_crack.mp3");
@@ -38,48 +38,83 @@ $(document).ready( () => {
     
     let headClix = 0, eyeClix = 0, noseClix = 0, mouthClix = 0;
     
-//functions for the click events of each head section
-    $("#head").click( () => {
+//head animate functions and click counters
+$("#head").click( () => {
         if (headClix < 9) {
             $("#head").animate({left: "-=367"},500);
             headClix++;
-        }      
-        else {
-            $("#head").animate({left: 0},500);
-            headClix = 0;
+        }  //else {
+            //$("#head").animate({left: 0},500);
+            //headClix = 0;
+        //}    
+    });     
+    $('#head').on('contextmenu', function(e) {
+        e.preventDefault();
+        if (headClix > 0) {
+            $(this).animate({ left: "+=367" }, 500);
+            headClix--;
         }
-    });     //end head click counter
+        return false;
+    });     //end head functions
 
+
+    //eye animate functions and click counters
     $("#eyes").click( () => {
         if (eyeClix < 9) {
             $("#eyes").animate({left: "-=367"},500);
             eyeClix++;
+        }   //else {
+            //$("#eyes").animate({left: 0},500);
+            //eyeClix = 0;
+        //}
+    });
+    $('#eyes').on('contextmenu', function(e) {
+        e.preventDefault();
+        if (eyeClix > 0) {
+            $(this).animate({ left: "+=367" }, 500);
+            eyeClix--;
         }
-        else {
-            $("#eyes").animate({left: 0},500);
-            eyeClix = 0;
-        }
-    });     //end eye click counter
+        return false;
+    });     //end eye functions
 
+
+      //nose animate functions and click counters
     $("#nose").click( () => {
         if (noseClix < 9) {
             $("#nose").animate({left: "-=367"},500);
             noseClix++;
+        }   //else {
+            //$("#nose").animate({left: 0},500);
+            //noseClix = 0;
+        //}
+    });
+    $('#nose').on('contextmenu', function(e) {
+        e.preventDefault();
+        if (noseClix > 0) {
+            $(this).animate({ left: "+=367" }, 500);
+            noseClix--;
         }
-        else {
-            $("#nose").animate({left: 0},500);
-            noseClix = 0;
-        }
+        return false;
     });     //end nose click counter
 
+
+      //mouth animate functions and click counters
     $("#mouth").click( () => {
         if (mouthClix < 9) {
             $("#mouth").animate({left: "-=367"},500);
             mouthClix++;
+        }   //else {
+            //$("#mouth").animate({left: 0},500);
+            //mouthClix = 0;
+        //}
+    });
+    $('#mouth').on('contextmenu', function(e) {
+        e.preventDefault();
+        if (mouthClix > 0) {
+            $(this).animate({ left: "+=367" }, 500);
+            mouthClix--;
         }
-        else {
-            $("#mouth").animate({left: 0},500);
-            mouthClix = 0;
-        }
+        return false;
     });     //end mouth click counter
-})
+
+});     //end document ready
